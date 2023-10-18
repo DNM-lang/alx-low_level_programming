@@ -1,20 +1,22 @@
 #include <stdio.h>
 
 /**
- * _strcpy - function with two arguments
- * @dest: 1st argument char type pointer
- * @src: 2nd argument char type pointer
+ * _strcpy - Copies a string pointed to by @src, including the
+ *           terminating null byte, to a buffer pointed to by @dest.
+ * @dest: A buffer to copy the string to.
+ * @src: The source string to copy.
  *
- * Description: copies the string to an array
- * Return: na
+ * Return: A pointer to the destination string @dest.
  */
-char *_strcpy(char *dest, char *src)
+char *_strcpy(char *dest, const char *src)
 {
-	int i;
+	int index = 0;
 
-	for (i = 0; src[i] != '\0'; i++)
-		dest[i] = src[i];
-	for ( ; i < src[i]; i++)
-		dest[i] = '\0';
+	while (src[index])
+	{
+		dest[index] = src[index];
+		index++;
+	}
+
 	return (dest);
 }
