@@ -6,25 +6,30 @@
  */
 unsigned int _strspn(char *s, char *accept)
 {
-	unsigned int q = 0;
+	unsigned int count = 0;
 	int r;
 
 	while (*s)
 	{
+		int matched = 0;
+
 		for (r = 0; accept[r]; r++)
 		{
 			if (*s == accept[r])
 			{
-				q++;
+				matched = 1;
 				break;
 			}
-			else if (accept[r + 1] == '\0')
-			{
-				return (q);
-			}
+		}
+		if (matched)
+		{
+			count++;
 			s++;
 		}
-		return (q);
+		else
+		{
+			break;
+		}
 	}
+	return (count);
 }
-
