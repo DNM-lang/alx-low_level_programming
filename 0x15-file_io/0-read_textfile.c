@@ -9,12 +9,13 @@ ssize_t read_textfile(const char *filename, size_t letters)
 {
 	char *buffer;
 	ssize_t bytesRead, bytesWritten;
+	FILE *file;
 
 	if (filename == NULL)
 	{
 		return (0);
 	}
-	FILE *file = fopen(filename, "r");
+	file = fopen(filename, "r");
 
 	if (file == NULL)
 	{
